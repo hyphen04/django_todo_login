@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block content %}
+<section id="nav">
+  <div class="p-3">
+    <nav class=" navbar navbar-expand-lg navbar-scroll rounded-3 mx-3 px-2 stick-top"
+      style="background-color: #e0f2f175;">
+      <div class="container mx-auto">
+        <a class="navbar-brand " href="/">TODOS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link  active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/service">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/contactus">Contact US</a>
+            </li>
+          </ul>
+          <a class="link" href="{% url 'logout' %}"><button class="btn btn-sm btn-outline-dark" type="button">
+              logout
+            </button></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+<div class="container">
+  <form method="POST" action="/service">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Task</label>
+      <input type="text" name="task" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Date</label>
+      <input type="date" name="date" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="container mt-4">
+  <h3 class="">TODOS</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in todos %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{todo.task}}</td>
+        <td>{{todo.date}}</td>
+        <td>
+          <a href="update/{{ todo.id }}"><button type="button" class="btn btn-outline-success">Update</button></a>
+          <a href="delete/{{ todo.id }}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+        </td>
+      </tr>
+      {% endfor %}
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{#    <style>#}
+{#        body,#}
+{#        html {#}
+{#            height: 100%;#}
+{#            margin: 0;#}
+{#            font: 400 15px/1.8 "Lato", sans-serif;#}
+{#            color: #777;#}
+{#        }#}
+{##}
+{#        .bgimg-1,#}
+{#        .bgimg-2,#}
+{#        .bgimg-3 {#}
+{#            position: relative;#}
+{#            opacity: 0.65;#}
+{#            background-position: center;#}
+{#            background-repeat: no-repeat;#}
+{#            background-size: cover;#}
+{##}
+{#        }#}
+{##}
+{#        .bgimg-1 {#}
+{#            background-image: url("/static/img/hero-bg.jpg");#}
+{#            height: 100%;#}
+{#        }#}
+{##}
+{#        .caption {#}
+{#            position: absolute;#}
+{#            left: 0;#}
+{#            top: 50%;#}
+{#            width: 100%;#}
+{#            text-align: center;#}
+{#            color: #000;#}
+{#        }#}
+{##}
+{#        .caption span.borderr {#}
+{#            background-color: #111;#}
+{#            color: #fff;#}
+{#            padding: 18px;#}
+{#            font-size: 25px;#}
+{#            letter-spacing: 10px;#}
+{#        }#}
+{##}
+{#        h3 {#}
+{#            letter-spacing: 5px;#}
+{#            text-transform: uppercase;#}
+{#            font: 20px "Lato", sans-serif;#}
+{#            color: #111;#}
+{#        }#}
+{#    </style>#}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DIGI GUARD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="bgimg-1">
+        <div class="p-3">
+            <nav class=" navbar navbar-expand-lg navbar-scroll rounded-3 mx-3 px-2 stick-top">
+                <div class="container mx-auto">
+                    <a class="navbar-brand " href="/">DIGI GUARD</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link  active" aria-current="page" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/service">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/contactus">Contact US</a>
+                            </li>
+                        </ul>
+                        <a class="link" href="{% url 'logout' %}"><button class="btn btn-sm btn-outline-dark"
+                                type="button">
+                                logout
+                            </button></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="caption">
+            <span class="borderr">Click on Services to get todos page</span><br>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
